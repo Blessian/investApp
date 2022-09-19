@@ -56,20 +56,6 @@ class User(AbstractBaseUser, PermissionsMixin):
             'unique': _('A user with that username already exists.'),
         },
     )
-
-    SECURITIES_CHOICES = [
-        ('A투자증권', 'A투자증권'),
-        ('B투자증권', 'B투자증권'),
-        ('B투자증권', 'B투자증권'),
-        ('B투자증권', 'B투자증권'),
-        ('B투자증권', 'B투자증권'),
-        ('B투자증권', 'B투자증권'),
-    ]
-    securities = models.CharField(max_length=20, choices=SECURITIES_CHOICES)
-
-    account_number = models.CharField(max_length=15)
-    account_name = models.CharField(max_length=30)
-    principal = models.PositiveIntegerField()
     is_staff = models.BooleanField(
         _("staff status"),
         default=False,
